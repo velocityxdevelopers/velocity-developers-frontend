@@ -1,0 +1,57 @@
+<div class="about-us-container">
+    <!-- Top Section: Image + Text -->
+    <div class="top-section">
+      <div class="left-side">
+        <br>
+        <img src="about-us.png" alt="Web Dev Work" class="work-image" />
+      </div>
+      <div class="right-side">
+        <h1>We Are Web Developers</h1>
+        <p>With 3+ years of experience, we've crafted high-quality web, iOS, and Android apps for over 100 clients. Our team is skilled in React, Angular, TypeScript, JavaScript, React Native, HTML, CSS, and AWS Cloud, building scalable, user-friendly solutions that drive business growth.</p>
+        
+        <h3>Technology</h3>
+        <p>Innovation is at the core of our solutions. We leverage cutting-edge technologies to create seamless digital experiences, from UI/UX design to app development, ensuring your business stays ahead in the ever-evolving digital landscape.</p>
+        
+        <ul>
+          <li><strong>UI/UX Design:</strong> Creating intuitive and engaging interfaces.</li>
+          <li><strong>Web & Mobile Development:</strong> Expert in React, Angular, React Native, and more.</li>
+          <li><strong>Cloud Infrastructure:</strong> Scalable, secure solutions powered by AWS Cloud.</li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Bottom Section: Meet the Team -->
+    <div class="bottom-section">
+      <h2>Meet the Team</h2>
+      <div class="team-cards">
+        <!-- Row 1: 2 Cards -->
+        <div class="card-row row-2">
+          <div class="card" *ngFor="let member of teamMembers.slice(0, 2)">
+            <div class="profile-img">
+              <img [src]="member.image" [alt]="member.name" />
+            </div>
+            <div class="card-content">
+              <h3>{{ member.name }}</h3>
+              <p>{{ member.role }}</p>
+              <p>{{ member.skills }}</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Row 2: 3 Cards -->
+        <div class="card-row row-3">
+          <div class="card" *ngFor="let member of teamMembers.slice(2)">
+            <div class="profile-img">
+              <img [src]="member.image" [alt]="member.name" />
+            </div>
+            <div class="card-content">
+              <h3>{{ member.name }}</h3>
+              <p>{{ member.role }}</p>
+              <p>{{ member.skills }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  

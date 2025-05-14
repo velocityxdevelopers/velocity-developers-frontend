@@ -1,0 +1,99 @@
+<div class="block1">
+    <div class="split-section">
+        <!-- Left Content -->
+        <div class="left-panel">
+          <h1>
+            We grow, innovate and empower <br>
+            <span class="highlight">Your businesses</span>
+          </h1>
+          <p>
+            We have helped 50+ businesses in the last 3 years to grow with the help of creative, innovative marketing services.
+          </p>
+          <img src="divider.png" alt="Divider" class="divider-img" />
+          <a class="cta-button" routerLink="review-us" target="_blank">Check / Review our work</a>
+        </div>
+      
+        <!-- Right Form -->
+        <div class="right-panel">
+          <div class="form-box">
+            <h3>Contact Us</h3>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+              <!-- Name Field -->
+              <label for="name">Name</label>
+              <input id="name" formControlName="name" type="text" placeholder="Your Name" />
+              <div class="error" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
+                <ng-container *ngIf="contactForm.get('name')?.errors?.['required']">Name is required.</ng-container>
+                <ng-container *ngIf="contactForm.get('name')?.errors?.['minlength']">Name must be at least 2 characters.</ng-container>
+              </div>
+      
+              <!-- Phone Field -->
+              <label for="phone">Phone Number</label>
+              <div class="phone-field">
+                <span class="prefix">+91</span>
+                <input id="phone" formControlName="phone" type="tel" placeholder="10-digit number" />
+              </div>
+              <div class="error" *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid">
+                <ng-container *ngIf="contactForm.get('phone')?.errors?.['required']">Phone number is required.</ng-container>
+                <ng-container *ngIf="contactForm.get('phone')?.errors?.['pattern']">Enter valid Indian mobile number.</ng-container>
+              </div>
+      
+              <!-- Description Field -->
+              <label for="description">Description</label>
+              <textarea id="description" formControlName="description" rows="4" placeholder="Write something..."></textarea>
+              <div class="error" *ngIf="contactForm.get('description')?.touched && contactForm.get('description')?.invalid">
+                <ng-container *ngIf="contactForm.get('description')?.errors?.['required']">Description is required.</ng-container>
+                <ng-container *ngIf="contactForm.get('description')?.errors?.['minlength']">At least 10 characters required.</ng-container>
+              </div>
+      
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Alert -->
+      <div class="success-alert" *ngIf="showAlert">
+        ✅ Data sent successfully!
+      </div>
+    </div>
+    <!-- block 2 -->
+    
+    <!-- block 3 -->
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <div class="carousel-item" *ngFor="let category of categories">
+          <div class="pill-button">
+            <img [src]="category.img" [alt]="category.title" />
+            <span>{{ category.title }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- block 4 -->
+    <div class="box-grid">
+      <div class="box" *ngFor="let box of boxes">
+        <div class="box-content">
+          <div class="box-image">
+            <img [src]="box.image" [alt]="box.title" />
+          </div>
+          <div class="box-title">
+            <h4>{{ box.title }}</h4>
+          </div>
+          <div class="box-description">
+            {{ box.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- block x -->
+    <h4 class="main-heading">How We Work</h4>
+    <div class="section-wrapper">
+      <div class="item-wrapper" *ngFor="let item of transparentCards">
+        <img [src]="item.icon" alt="Icon" class="item-icon">
+        <h3 class="item-title">{{ item.title }}</h3>
+        <p class="item-description">{{ item.description }}</p>
+      </div>
+    </div>
+    
+    <!-- block 5 -->
+<br>

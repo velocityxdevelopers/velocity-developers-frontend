@@ -1,0 +1,58 @@
+<div class="review-container">
+  <!-- Top section: Form -->
+  <div class="top-row">
+    <!-- Review Form -->
+    <div class="form-box">
+      <h3>Submit Review</h3>
+      <form [formGroup]="reviewForm" (ngSubmit)="submitReview()">
+        <!-- Name -->
+        <input id="name" formControlName="name" type="text" placeholder="Your Name" />
+        <div class="error" *ngIf="name?.touched && name?.invalid">
+          <ng-container *ngIf="name?.errors?.['required']">Name is required.</ng-container>
+          <ng-container *ngIf="name?.errors?.['minlength']">Minimum 4 characters.</ng-container>
+        </div>
+        <div class="error" *ngIf="stars?.touched && stars?.invalid">Select at least 1 star.</div>
+        
+        <!-- Comments -->
+        <textarea id="comments" formControlName="comments" rows="4" placeholder="Write down your comments?"></textarea>
+        <div class="error" *ngIf="comments?.touched && comments?.invalid">
+          <ng-container *ngIf="comments?.errors?.['required']">Comments required.</ng-container>
+          <ng-container *ngIf="comments?.errors?.['minlength']">Minimum 10 characters.</ng-container>
+        </div>
+
+        <!-- Stars -->
+        <div class="stars">
+          <span *ngFor="let star of [0,1,2,3,4]" 
+                (click)="onStarClick(star)" 
+                [ngClass]="{'gold': reviewForm.value.stars > star}">
+            &#9733;
+          </span>
+        </div>
+
+        <button type="submit" [disabled]="reviewForm.invalid">Submit</button>
+      </form>
+
+      <div *ngIf="alertVisible" class="alert">
+        Review submitted successfully!
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Review Cards -->  
+  <div class="client-reviews">Client Reviews</div>
+  <div class="reviews-container">
+    <div class="review-card" *ngFor="let review of reviews">
+      <div class="review-header">
+        <h3>{{ review.name }}</h3>
+        <div class="stars">
+          <span *ngFor="let s of [0,1,2,3,4]" [ngClass]="{'gold': review.stars > s}">&#9733;</span>
+        </div>
+      </div>
+      <p>{{ review.comments }}</p>
+    </div>
+
+    <!-- Dummy Cards to Maintain 3-per-row Layout -->
+    <div class="review-card dummy" *ngIf="reviews.length % 3 !== 0"></div>
+    <div class="review-card dummy" *ngIf="reviews.length % 3 === 1"></div>
+  </div>
+</div>

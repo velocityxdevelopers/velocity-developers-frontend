@@ -1,0 +1,11 @@
+<div class="blog-container">
+  <div *ngFor="let post of blogPosts" class="blog-card">
+    <h2>{{ post.title }}</h2>
+    <p class="meta">{{ post.date }} — {{ post.author }}</p>
+    <p class="summary">{{ post.summary }}</p>
+    <div class="tags">
+      <span *ngFor="let tag of post.tags" class="tag">{{ tag }}</span>
+    </div>
+    <a [routerLink]="['/blog', post.slug]" class="read-more">Read More</a>
+  </div>
+</div>

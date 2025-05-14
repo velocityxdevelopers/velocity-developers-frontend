@@ -1,0 +1,9 @@
+<div class="card-container">
+  <div class="card" *ngFor="let item of staticData.concat(dynamicData)">
+    <img [src]="item.image" alt="Card image" class="card-image" />
+    <div class="card-content">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
+</div>

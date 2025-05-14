@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="card">
+    <h2 class="card-title">Admin Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input formControlName="email" id="email" type="email" placeholder="Enter email" />
+        <div class="error" *ngIf="email?.invalid && email?.touched">
+          <div *ngIf="email?.errors?.['required']">Email is required</div>
+          <div *ngIf="email?.errors?.['email']">Invalid email</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input formControlName="password" id="password" type="password" placeholder="Enter password" />
+        <div class="error" *ngIf="password?.invalid && password?.touched">
+          <div *ngIf="password?.errors?.['required']">Password is required</div>
+          <div *ngIf="password?.errors?.['minlength']">Min 6 characters</div>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid" class="btn-submit">Login</button>
+    </form>
+  </div>
+</div>
+<!-- block2 -->
+ <div class="alert" *ngIf="alertMessage">
+  {{ alertMessage }}
+</div>

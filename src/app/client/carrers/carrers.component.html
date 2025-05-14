@@ -1,0 +1,33 @@
+<div class="careers-wrapper">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Careers at Velocity Developers</h1>
+        <p>We create beautiful digital products. Want to help us design the future?</p>
+      </div>
+    </section>
+  
+    <section class="perks">
+      <h2>Why Work With Us</h2>
+      <div class="perks-grid">
+        <div class="perk-card" *ngFor="let perk of reasons">
+          <h3>{{ perk.title }}</h3>
+          <p>{{ perk.text }}</p>
+        </div>
+      </div>
+    </section>
+  
+    <section class="openings">
+      <h2>Current Openings</h2>
+      <div class="jobs-grid">
+        <div class="job-card" *ngFor="let job of jobs">
+          <div class="job-header">
+            <h3>{{ job.title }}</h3>
+            <span>{{ job.type }}</span>
+          </div>
+          <p>{{ job.description }}</p>
+          <button (click)="apply(job.title)">Apply Now</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  

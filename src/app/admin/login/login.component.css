@@ -1,0 +1,153 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+/* Center wrapper */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 40px 20px; /* Add space for mobile and small screens */
+}
+
+/* Card */
+.card {
+  background: #eaeaea;
+  border: 2px solid #5e17eb;
+  border-radius: 8px;
+  padding: 30px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.card-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:focus {
+  border-color: #5e17eb;
+  outline: none;
+}
+
+/* Error Messages */
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* Submit Button */
+.btn-submit {
+  background-color: #5e17eb;
+  color: #fff;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #4a0cd7;
+}
+
+.btn-submit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive: small screens */
+@media (max-width: 480px) {
+  .card {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  input, .btn-submit {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+/* block2 */
+.alert-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #5e17eb;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  font-size: 1rem;
+  text-align: center;
+  max-width: 90vw;
+  width: 320px;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+@media (max-width: 500px) {
+  .alert-box {
+    width: 90vw;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

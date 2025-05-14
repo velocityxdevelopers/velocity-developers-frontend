@@ -1,0 +1,36 @@
+<header class="header">
+    <div class="container">
+      <div class="logo">
+       <img src="logo.png" alt="logo" style="height: 40; width: 150px;">
+      </div>
+  
+      <div class="nav-area">
+        <nav [class.active]="menuOpen">
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a routerLink="upcomingprojects">Upcoming projects</a></li>
+            <li class="dropdown">
+              <a>Services</a>
+              <ul class="dropdown-menu">
+                <a href="webdevelopment">Web Development</a>
+                <a href="androiddevelopment">Andriod/IOS Development</a>
+                <a href="seooptimization">SEO Optimization</a>
+              </ul>
+            </li>
+            <li><a routerLink="carrers-for-you">carrers</a></li>
+          </ul>
+        </nav>
+  
+        <div class="contact-btn">
+          <button routerLink="/about-us">About Us</button>
+        </div>
+  
+        <div class="hamburger" (click)="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+  
