@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { InvokerService } from '../../service/invoker.service';
 @Component({
   selector: 'app-home',
   standalone: false,
@@ -119,24 +120,38 @@ export class HomeComponent {
   contactForm: FormGroup;
   showAlert = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private clientService:InvokerService) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
-      phone: ['', [Validators.required, Validators.pattern(/^[6-9]\d{9}$/)]],
+      phoneNumber: ['', [Validators.required, Validators.pattern(/^[6-9]\d{9}$/)]],
       description: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
 
   onSubmit(): void {
-    if (this.contactForm.valid) {
-      console.log('Form submitted:', this.contactForm.value);
-      this.showAlert = true;
-      setTimeout(() => {
-        this.showAlert = false;
-        this.contactForm.reset();
-      }, 1000);
-    } else {
-      this.contactForm.markAllAsTouched();
-    }
+  if (this.contactForm.valid) {
+    const clientData = {
+      name: this.contactForm.value.name,
+      phoneNumber: this.contactForm.value.phoneNumber,
+      description: this.contactForm.value.description
+    };
+
+    this.clientService.addClient(clientData).subscribe({
+      next: () => {
+        this.showAlert = true;
+
+        setTimeout(() => {
+          this.showAlert = false;
+          this.contactForm.reset();
+        }, 1000);
+      },
+      error: (error: any) => {
+        console.error('Error adding client:', error);
+        // Optional: show an error alert to the user
+      }
+    });
+  } else {
+    this.contactForm.markAllAsTouched();
   }
+}
 }

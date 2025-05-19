@@ -1,5 +1,5 @@
 export interface Review {
-  _id: string;              // MongoDB's _id field
+  _id?: string;              // MongoDB's _id field
   name: string;             // Reviewer's name
   numberOfStars: number;    // Number of stars (1-5)
   description: string;      // Review description

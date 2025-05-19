@@ -14,10 +14,10 @@
         <div class="error" *ngIf="stars?.touched && stars?.invalid">Select at least 1 star.</div>
         
         <!-- Comments -->
-        <textarea id="comments" formControlName="comments" rows="4" placeholder="Write down your comments?"></textarea>
-        <div class="error" *ngIf="comments?.touched && comments?.invalid">
-          <ng-container *ngIf="comments?.errors?.['required']">Comments required.</ng-container>
-          <ng-container *ngIf="comments?.errors?.['minlength']">Minimum 10 characters.</ng-container>
+        <textarea id="comments" formControlName="description" rows="4" placeholder="Write down your comments?"></textarea>
+        <div class="error" *ngIf="description?.touched && description?.invalid">
+          <ng-container *ngIf="description?.errors?.['required']">Comments required.</ng-container>
+          <ng-container *ngIf="description?.errors?.['minlength']">Minimum 10 characters.</ng-container>
         </div>
 
         <!-- Stars -->
@@ -45,10 +45,10 @@
       <div class="review-header">
         <h3>{{ review.name }}</h3>
         <div class="stars">
-          <span *ngFor="let s of [0,1,2,3,4]" [ngClass]="{'gold': review.stars > s}">&#9733;</span>
+          <span *ngFor="let s of [0,1,2,3,4]" [ngClass]="{'gold': review.numberOfStars > s}">&#9733;</span>
         </div>
       </div>
-      <p>{{ review.comments }}</p>
+      <p>{{ review.description }}</p>
     </div>
 
     <!-- Dummy Cards to Maintain 3-per-row Layout -->

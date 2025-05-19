@@ -12,6 +12,7 @@ import { AdrioddevelopmentComponent } from './client/static/adrioddevelopment/ad
 import { TermsandconditionsComponent } from './client/static/termsandconditions/termsandconditions.component';
 import { BlogsComponent } from './client/static/blogs/blogs.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { UpcomingprojectComponent } from './admin/upcomingproject/upcomingproject.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path:'dashboard',
     component:DashboardComponent
+  },
+  {
+    path:'addupcomingprojects',
+    component:UpcomingprojectComponent
   }
 ];
 

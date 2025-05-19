@@ -1,0 +1,137 @@
+/* Importing your custom CSS as provided */
+
+.admin-header {
+  background-color: #5e17eb;
+  color: #fff;
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+  text-align: center;
+  border-radius: 12px;
+  max-width: 90%;
+  font-size: 1.25rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.table-section {
+  background: #eaeaea;
+  border: 2px solid #5e17eb;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+h3 {
+  text-align: center;
+  color: #5e17eb;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #eaeaea;
+}
+
+thead {
+  background-color: #5e17eb;
+  color: #fff;
+}
+
+th, td {
+  border: 1px solid #5e17eb;
+  padding: 10px;
+  text-align: center;
+}
+
+td:last-child, th:last-child {
+  border-right: none;
+}
+
+.btn-danger {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #d9363e;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .table-section {
+    margin: 1rem auto;
+  }
+
+  th, td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .admin-header {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .table-section {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  th, td {
+    font-size: 0.75rem;
+  }
+}
+
+table td:last-child,
+table th:last-child {
+  border: none;
+  background-color: transparent;
+}
+
+/* Extra: Style form elements */
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.btn-submit {
+  background-color: #5e17eb;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #4314b8;
+}

@@ -18,7 +18,7 @@
             <td>{{ client.description }}</td>
             <td>{{ client.createdAt }}</td>
             <td>
-              <button class="btn btn-danger btn-sm" (click)="deleteClient(client._id)">Del</button>
+              <button class="btn btn-danger btn-sm" (click)="deleteClient(client._id!)">Del</button>
             </td>
           </tr>
         </tbody>
@@ -43,7 +43,7 @@
             <td>{{ review.description }}</td>
             <td>{{review.createdAt}}</td>
             <td>
-              <button class="btn btn-danger btn-sm" (click)="deleteReview(review._id)">Del</button>
+              <button class="btn btn-danger btn-sm" (click)="deleteReview(review._id!)">Del</button>
             </td>
           </tr>
         </tbody>

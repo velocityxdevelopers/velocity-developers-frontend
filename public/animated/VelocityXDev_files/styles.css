@@ -1,0 +1,15 @@
+/* src/styles.css */
+html,
+body {
+  font-family: "Inter", sans-serif;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background-color: #eaeaea;
+}
+
+/* angular:styles/global:styles */
+/*# sourceMappingURL=styles.css.map */

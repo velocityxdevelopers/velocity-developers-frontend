@@ -1,1 +1,56 @@
-<p>upcomingproject works!</p>
+<div class="container">
+  <!-- Admin Welcome Block -->
+  <div class="admin-header">Welcome Admin - Manage Upcoming Projects</div>
+
+  <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <!-- Left Form -->
+    <div class="left" style="flex: 1 1 100%; max-width: 100%;" 
+         fxFlex.gt-sm="50%" fxFlex="100%">
+      <form [formGroup]="projectForm" (ngSubmit)="onSubmit()" class="table-section">
+        <h3>{{ isEditMode ? 'Edit Project' : 'Add New Project' }}</h3>
+
+        <label>Title</label>
+        <input type="text" formControlName="title" placeholder="Project Title" />
+
+        <label>Description</label>
+        <textarea formControlName="description" placeholder="Project Description"></textarea>
+
+        <label>Image URL</label>
+        <input type="text" formControlName="image" placeholder="https://..." />
+
+        <button type="submit" class="btn-submit">
+          {{ isEditMode ? 'Update' : 'Submit' }}
+        </button>
+      </form>
+    </div>
+
+    <!-- Right Table -->
+    <div class="right table-section" style="flex: 1 1 100%; max-width: 100%;" 
+         fxFlex.gt-sm="50%" fxFlex="100%">
+      <h3>Upcoming Projects</h3>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let project of projects">
+              <td><img [src]="project.image" width="100" /></td>
+              <td>{{ project.title }}</td>
+              <td>{{ project.description }}</td>
+              <td>
+                <button (click)="onEdit(project)">Edit</button>
+                <button class="btn-danger" (click)="onDelete(project._id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -23,7 +23,6 @@ export class DashboardComponent {
   fetchClients(): void {
     this.apiService.getClients().subscribe(
       (data) => {
-        console.log(data)
         this.clients = data;
       },
       (error) => {
@@ -48,7 +47,6 @@ export class DashboardComponent {
   fetchReviews(): void {
     this.apiService.getReviews().subscribe(
       (data) => {
-        console.log(data)
         this.reviews = data;
       },
       (error) => {

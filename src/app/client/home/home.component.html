@@ -30,11 +30,11 @@
               <label for="phone">Phone Number</label>
               <div class="phone-field">
                 <span class="prefix">+91</span>
-                <input id="phone" formControlName="phone" type="tel" placeholder="10-digit number" />
+                <input id="phone" formControlName="phoneNumber" type="tel" placeholder="10-digit number" />
               </div>
-              <div class="error" *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid">
-                <ng-container *ngIf="contactForm.get('phone')?.errors?.['required']">Phone number is required.</ng-container>
-                <ng-container *ngIf="contactForm.get('phone')?.errors?.['pattern']">Enter valid Indian mobile number.</ng-container>
+              <div class="error" *ngIf="contactForm.get('phoneNumber')?.touched && contactForm.get('phoneNumber')?.invalid">
+                <ng-container *ngIf="contactForm.get('phoneNumber')?.errors?.['required']">Phone number is required.</ng-container>
+                <ng-container *ngIf="contactForm.get('phoneNumber')?.errors?.['pattern']">Enter valid Indian mobile number.</ng-container>
               </div>
       
               <!-- Description Field -->
