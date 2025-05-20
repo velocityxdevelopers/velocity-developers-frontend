@@ -1,4 +1,17 @@
 <div class="container mt-4">
+  <nav class="navbar-container">
+    <div class="navbar-content">
+      <div class="navbar-left">
+        <span class="brand">Welcome {{adminname}}</span>
+      </div>
+      <div class="navbar-right">
+        <button class="btn btn-danger btn-sm">dashboard</button>
+        <button class="btn btn-danger btn-sm">projects</button>
+        <button class="btn btn-danger btn-sm" (click)="logout()">logout</button>
+      </div>
+    </div>
+  </nav>
+<br><br>
   <div class="row">
     <div class="col-12 col-lg-6 mb-4 table-section">
       <h3>Clients</h3>
@@ -18,7 +31,7 @@
             <td>{{ client.description }}</td>
             <td>{{ client.createdAt }}</td>
             <td>
-              <button class="btn btn-danger btn-sm" (click)="deleteClient(client._id!)">Del</button>
+              <button class="btn btn-danger btn-sm" (click)="deleteClient(client._id!)">Delete</button>
             </td>
           </tr>
         </tbody>
@@ -43,11 +56,36 @@
             <td>{{ review.description }}</td>
             <td>{{review.createdAt}}</td>
             <td>
-              <button class="btn btn-danger btn-sm" (click)="deleteReview(review._id!)">Del</button>
+              <button class="btn btn-danger btn-sm" (click)="deleteReview(review._id!)">Delete</button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+    <div class="row">
+    <div class="col-12 col-lg-6 mb-4 table-section">
+      <h3>Projects</h3>
+      <table class="table table-striped table-responsive">
+        <thead>
+          <tr>
+            <th>title</th>
+            <th>image</th>
+            <th>Description</th>
+            <th>created on</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let client of clients">
+            <td>{{ client.name}}</td>
+            <td>{{ client.phoneNumber }}</td>
+            <td>{{ client.description }}</td>
+            <td>{{ client.createdAt }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="deleteClient(client._id!)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 </div>

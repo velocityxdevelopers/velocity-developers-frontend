@@ -96,22 +96,22 @@ export class HomeComponent {
   ];
   boxes = [
     {
-      image: 'animated/socialmedia.png',
+      image: 'https://ik.imagekit.io/4xwu0wvso/socialmedia.png?updatedAt=1747733878061',
       title: 'Social Media Management',
       description: 'Build brand, engage audiences, and drive growth across platforms'
     },
     {
-      image: 'animated/contentcreateion.png',
+      image: 'https://ik.imagekit.io/4xwu0wvso/contentcreateion.png?updatedAt=1747733877974',
       title: 'Content Creation',
       description: 'Create compelling content to captivate and convert your audience'
     },
     {
-      image: 'animated/seooptimization.png',
+      image: 'https://ik.imagekit.io/4xwu0wvso/seooptimization.png?updatedAt=1747733878103',
       title: 'SEO Optimization',
       description: 'Improve your website’s visibility and organic search traffic'
     },
     {
-      image: 'animated/paidmarketing.png',
+      image: 'https://ik.imagekit.io/4xwu0wvso/paidmarketing.png?updatedAt=1747733876916',
       title: 'Paid Advertising',
       description: 'Maximize ROI with targeted ad campaigns across platforms'
     }

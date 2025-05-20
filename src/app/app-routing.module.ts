@@ -13,6 +13,7 @@ import { TermsandconditionsComponent } from './client/static/termsandconditions/
 import { BlogsComponent } from './client/static/blogs/blogs.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { UpcomingprojectComponent } from './admin/upcomingproject/upcomingproject.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -56,17 +57,21 @@ const routes: Routes = [
     component:UpcomingprojectsComponent,
   },
   {
-     path:'admin',
-     component:LoginComponent
+     path:'admin-login-velocity-x-dev',
+     component:LoginComponent,
   },
   {
-    path:'dashboard',
-    component:DashboardComponent
+    path:'admin-dashboard-velocity-x-dev',
+    component:DashboardComponent,
+    canActivate:[AuthGuard]
+
   },
   {
-    path:'addupcomingprojects',
-    component:UpcomingprojectComponent
-  }
+    path:'admin-addupcomingprojects-velocity-x-dev',
+    component:UpcomingprojectComponent,
+    canActivate:[AuthGuard]
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -1,5 +1,27 @@
+<nav class="navbar-container">
+  <div class="navbar-content">
+    <span class="navbar-text">PROJECTS WE DID</span>
+  </div>
+</nav>
+
 <div class="card-container">
-  <div class="card" *ngFor="let item of staticData.concat(dynamicData)">
+  <div class="card" *ngFor="let item of staticData">
+    <img [src]="item.image" alt="Card image" class="card-image" />
+    <div class="card-content">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar-container">
+  <div class="navbar-content">
+    <span class="navbar-text">OUR NEW PROJECTS</span>
+  </div>
+</nav>
+
+<div class="card-container">
+  <div class="card" *ngFor="let item of upcomingprojects">
     <img [src]="item.image" alt="Card image" class="card-image" />
     <div class="card-content">
       <h3>{{ item.title }}</h3>

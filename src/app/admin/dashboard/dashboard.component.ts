@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Client } from '../../models/client.model';
 import { InvokerService } from '../../service/invoker.service';
 import { Review } from '../../models/review.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +11,11 @@ import { Review } from '../../models/review.model';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+  adminname = sessionStorage.getItem('admin')
   clients: Client[] = [];
   reviews: Review[] = [];
   
-  constructor(private apiService: InvokerService) {}
+  constructor(private apiService: InvokerService,private router:Router) {}
   ngOnInit(): void {
     this.fetchClients();
     this.fetchReviews();    
@@ -67,4 +69,8 @@ export class DashboardComponent {
       }
     );
   }
+  logout(){
+    sessionStorage.removeItem('authToken')
+    this.router.navigate(['/admin-login-page-velocity-x-dev'])
+}
 }

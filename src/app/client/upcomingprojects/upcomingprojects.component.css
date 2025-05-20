@@ -13,8 +13,8 @@
 }
 
 .card {
-  background-color: #d4edda; /* light green */
-  border: 2px solid #ffc107; /* yellow border */
+  background-color:  #eaeaea; /* light green */
+  border: 2px solid  #5e17eb;; /* yellow border */
   border-radius: 16px; /* rounded corners */
   overflow: hidden;
   transform: scale(1); /* prevent zoom-out on page load */
@@ -24,13 +24,13 @@
 }
 
 .card:hover {
-  transform: scale(1.05); /* zoom on hover */
+  transform: scale(1.001); /* zoom on hover */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .card-image {
   width: 100%;
-  height: 200px;
+  height: auto;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -63,7 +63,7 @@
 
 .card-content li::before {
   content: '•';
-  color: #ffc107; /* yellow bullet */
+  color:  #5e17eb;; /* yellow bullet */
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -72,4 +72,32 @@
 .card-content p {
   margin: 0;
   color: #333;
+}
+
+/* //heading navbar */
+
+
+.navbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.navbar-content {
+  width: 60%;
+  background-color: #5e17eb;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
 }
